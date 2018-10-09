@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar layoutX="14.0" layoutY="22.0" prefHeight="387.2" prefWidth="672.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+            <Menu fx:id="m_media" mnemonicParsing="false" text="Media">
+               <items>
+                  <MenuItem fx:id="mi_openFile" mnemonicParsing="false" onAction="#onOpenFiles" text="Open Files" />
+                  <MenuItem fx:id="mi_openFolder" mnemonicParsing="false" onAction="#onOpenFolder" text="Add FIles to Playlist" />
+                  <MenuItem fx:id="mi_openPlaylist" mnemonicParsing="false" onAction="#onOpenPlaylist" text="Open Playlist" />
+                  <MenuItem fx:id="mi_savePlaylistToFile" mnemonicParsing="false" onAction="#onSavePlaylistToFIle" text="Save Playlist to File" />
+                  <MenuItem fx:id="mi_close" mnemonicParsing="false" onAction="#onExitProgram" text="Exit" />
+               </items>
+            </Menu>
+          <Menu fx:id="m_playback" mnemonicParsing="false" text="Playback">
+            <items>
+              <MenuItem fx:id="mi_play" mnemonicParsing="false" onAction="#onPlay" text="Play" />
+                  <MenuItem fx:id="mi_stop" mnemonicParsing="false" onAction="#onStop" text="Stop" />
+                  <MenuItem fx:id="mi_previous" mnemonicParsing="false" onAction="#onPrevious" text="Previous" />
+                  <MenuItem fx:id="mi_next" mnemonicParsing="false" onAction="#onNext" text="Next" />
+                  <RadioMenuItem fx:id="rmi_shuffleMode" mnemonicParsing="false" onAction="#onShuffleMode" text="Shuffle Mode" />
+                  <RadioMenuItem fx:id="rmi_repeatMode" mnemonicParsing="false" onAction="#onRepeatMode" text="Repeat Mode" />
+                  <RadioMenuItem fx:id="rmi_crossfadeMode" mnemonicParsing="false" onAction="#onCrossfadeMode" text="Crossfade Mode" />
+            </items>
+          </Menu>
+          <Menu fx:id="m_audio" mnemonicParsing="false" text="Audio">
+            <items>
+              <MenuItem fx:id="mi_increaseVolume" mnemonicParsing="false" onAction="#onIncreaseVolume" text="Increase Volume" />
+                  <MenuItem fx:id="mi_decreaseVolume" mnemonicParsing="false" text="Decrease Volume" />
+                  <MenuItem fx:id="mi_mute" mnemonicParsing="false" onAction="#onMute" text="Mute" />
+            </items>
+          </Menu>
+          <Menu fx:id="m_help" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="mi_about" mnemonicParsing="false" onAction="#onAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane dividerPositions="0.18386388583973656" layoutY="35.0" orientation="VERTICAL" prefHeight="387.2" prefWidth="672.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+        <items>
+          <AnchorPane>
+               <children>
+                  <Pane layoutX="46.0" layoutY="-68.0" prefHeight="63.2" prefWidth="670.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="233.0" layoutY="10.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../extsources/icons/001-fast-forward-button.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="303.0" layoutY="12.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../extsources/icons/010-play-button-1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="366.0" layoutY="12.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../extsources/icons/001-fast-forward-button.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="47.0" fitWidth="44.0" layoutX="510.0" layoutY="12.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../extsources/icons/009-speaker.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane prefHeight="310.0" prefWidth="514.0">
+               <children>
+                  <ListView layoutX="214.0" layoutY="55.0" prefHeight="310.4" prefWidth="671.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
